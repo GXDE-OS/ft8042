@@ -1,15 +1,21 @@
 ifneq ($(KERNELRELEASE),)
 KERNELDIR ?= /lib/modules/$(KERNELRELEASE)/build
-KERNELNAME ?= $(KERNELRELEASE)
+KERNELNAME = $(KERNELRELEASE)
 else
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build
-KERNELNAME ?= $(shell uname -r)
+KERNELNAME = $(shell uname -r)
 endif
 
+obj-m := ft8042.o
 PWD :=$(shell pwd)
 
-default:
-	$(MAKE) -C $(KERNELDIR)  M=$(PWD)  
+.PHONY: all
+all: clean modules #install
+
+.PHONY: modules
+modules:
+	$(MAKE) -C $(KERNELDIR)  M=$(PWD)  modules
+
 clean:
 	rm -rf *.mk .tmp_versions Module.symvers *.mod.c *.mod *.o *.ko .*.cmd Module.markers modules.order
 load:

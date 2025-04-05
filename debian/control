@@ -12,7 +12,7 @@ Homepage: https://gitee.com/GXDE-OS/ft8042
 #Vcs-Git: https://salsa.debian.org/debian/ft8042-dkms.git
 
 Package: ft8042-dkms
-Architecture: arm64
+Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
