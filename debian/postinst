@@ -1,0 +1,13 @@
+#!/bin/sh
+
+DEB_NAME=ft8042-dkms
+NAME=ft8042
+VERSION=0.1
+
+for kv in $(ls /lib/modules/ | egrep -e "^5\.|^6\."); do
+    if [ -d /lib/modules/${kv}/build/ ]; then
+        dkms install ${NAME}/${VERSION} -k ${kv} || echo ""
+    fi
+done
+
+exit 0

@@ -1,0 +1,5 @@
+ft8042-dkms (0.1) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 05 Apr 2025 20:29:50 +0800
