@@ -1,9 +1,0 @@
-#!/bin/sh
-
-DEB_NAME=ft8042-dkms
-NAME=ft8042
-VERSION=0.1
-
-dkms remove ${NAME}/${VERSION} --all
-
-exit 0
